@@ -3,44 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="styles.css" rel="stylesheet" type="text/css" media="screen" />
+    <link href="../CSS/styles.css" rel="stylesheet" type="text/css" media="screen" />
     <title>FormularioRegistrarse</title>
 </head>
 <body>
-
     <div id="menu_bg">
         <div id="menu">
             <ul>
-                <li><a href="index.html" class="active">Home</a></li>
+               <li><a href="index.html" class="active">Home</a></li>
                 <li><a href="formulario.html">Registrarse</a></li>
                 <li><a href="login.html">iniciar Sesion</a></li>
-                <li><img src="images/rss.png" alt="" title="" style="padding: 0px; margin: 0px;"/></li>
+                <li><img src="../CSS/images/rss.png" alt="" title="" style="padding: 0px; margin: 0px;"/></li>
             </ul>
         </div>
     </div>
     <div id="logo">
         <h1><a href="#">AgendaTelefonica.com</a></h1>
          <a href="#" id="metamorph"><small>conectate siempre con tus amigos</small></a>
-         <img src="images/img2.jpg" alt="" title="" style="float: right; padding: 0px 60px 50px 0px"/>
+         <img src="../CSS/images/img2.jpg" alt="" title="" style="float: right; padding: 0px 60px 50px 0px"/>
     </div>
     
     
 <div id="content">	
     <div id="contact">
         <div id="contact_left">
-            <h2>Ingresar a su cuenta</h2>
-            <a href="#"><img src="images/login.jpg" alt="location" title="location" class="location" /></a>
+            <h2>Our Location</h2>
+            <a href="#"><img src="../CSS/images/location.jpg" alt="location" title="location" class="location" /></a>
             <div class="grey_border"></div>
             
             <div id="contact_form">
-            	<form id="form2" name='sesion' action='http://localhost:8080/Practica-de-laboratorio-01-Servlets-JSP-y-JDBC/InicioSesion' method='get'>
-              
+                <form id="form2" method="post" action="#">
                     <fieldset>
-                       
-                        <label class="labelform">Correo:</label><input id="correo" type="text" name="correo"  alt=""/><br />
-                        <label class="labelform">Contraseña:</label><input id="password" type="text" name="password"  alt=""/><br />
+                        <label class="labelform">Cedula:</label><input id="cedula" type="text" name="cedula" value="" alt=""/><br />
+                        <label class="labelform">Nombre:</label><input id="nombres" type="text" name="nombres" value="Nombres:" alt=""/><br />
+                        <label class="labelform">Apellidos:</label><input id="apellidos" type="text" name="apellidos" value="Apellidos:" alt=""/><br />
+                        <label class="labelform">Correo:</label><input id="correo" type="text" name="correo" value="Correo:" alt=""/><br />
+                        <label class="labelform">Contraseña:</label><input id="password" type="text" name="password" value="Contraseña:" alt=""/><br />
 
-                        <input type="submit" id="contact-submit" value="login"/>
+                        <input type="submit" id="contact-submit" value="Send"/>
                         <input type="button" id="contact-clear" value="Reset"/>
                     </fieldset>
                    </form>
@@ -54,14 +54,14 @@ Cras convallis iaculis erat, et venenatis turpis gravida non. Ut vehicula leo te
             <div class="read2"><a href="#">read more</a></div>
             
             <h2>Meet Our Company</h2>
-                <div class="pad_left" style="background: url(images/house.png) no-repeat 0px 3px">
+                <div class="pad_left" style="background: url(../CSS/images/house.png) no-repeat 0px 3px">
                     1234 Some Street, Brooklyn, NY 11201
                 </div>
-                <div class="pad_left" style="background: url(images/phone.png) no-repeat 0px 2px">
+                <div class="pad_left" style="background: url(../CSS/images/phone.png) no-repeat 0px 2px">
                     Phone:  1(234) 567 8910<br />
                     Fax: 1(234) 567 8910
                 </div>
-                <div class="pad_left" style="background: url(images/contact_icon.png) no-repeat 0px 5px">
+                <div class="pad_left" style="background: url(../CSS/images/contact_icon.png) no-repeat 0px 5px">
                     General: companyname@yahoo.com<br />
                     Support: support@yahoo.com
                 </div>
@@ -79,7 +79,7 @@ Cras convallis iaculis erat, et venenatis turpis gravida non. Ut vehicula leo te
                 <div id="footer_top">
                     <div id="footer_left">
                         <h2>About Us</h2>
-                        <img src="images/img1.jpg" alt="" title="" style="float: left; padding: 0px 20px 10px 0px"/>
+                        <img src="../CSS/images/img1.jpg" alt="" title="" style="float: left; padding: 0px 20px 10px 0px"/>
                         <p><a href="#">Morbi id vehicula orci.</a> 
 Ut consequat commodo nunc nec tincidunt. Pellentesque vitae gravida nulla. Aliquam fermentum ipsum et mauris rutrum ac ornare convallis justo in eros fermentum eget cursus augue cursus. Donec sit amet eros eget ligula blandit congue. </p>
                     </div>
@@ -110,15 +110,15 @@ Ut consequat commodo nunc nec tincidunt. Pellentesque vitae gravida nulla. Aliqu
                 </div>
                 <div id="footer_bot">
                     <div id="footer_bot_left">
-                        <p>Copyright  2020 by Jonnathan Sicha. </p>
-                            
+                        <p>Copyright  2015.</p>
+                        <p class="fdegt">Web Design: <a href="http://www.metamorphozis.com" class="koug">Free Website Templates</a></p>		
                     </div>
                     <div id="footer_icon">
-                        <a href="#"><img src="images/facebook.png" alt="" title=""/></a>
-                        <a href="#"><img src="images/twitter.png" alt="" title=""/></a>
-                        <a href="#"><img src="images/yahoo.png" alt="" title=""/></a>
-                        <a href="#"><img src="images/rss.png" alt="" title=""/></a>
-                        <a href="#"><img src="images/youtube.png" alt="" title=""/></a>
+                        <a href="#"><img src="../CSS/images/facebook.png" alt="" title=""/></a>
+                        <a href="#"><img src="../CSS/images/twitter.png" alt="" title=""/></a>
+                        <a href="#"><img src="../CSS/images/yahoo.png" alt="" title=""/></a>
+                        <a href="#"><img src="../CSS/images/rss.png" alt="" title=""/></a>
+                        <a href="#"><img src="../CSS/images/youtube.png" alt="" title=""/></a>
                     </div>
                 </div>
                 <div class="clear"></div>
