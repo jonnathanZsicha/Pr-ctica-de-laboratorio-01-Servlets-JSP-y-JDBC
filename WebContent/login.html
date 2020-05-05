@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="styles.css" rel="stylesheet" type="text/css" media="screen" />
-    <title>Agenda_Telefonica</title>
+    <title>FormularioRegistrarse</title>
 </head>
 <body>
+
     <div id="menu_bg">
         <div id="menu">
             <ul>
@@ -24,48 +25,62 @@
     </div>
     
     
-    
-    <div id="content">
-            <h2>Aliquam Elementum Felis</h2>
-            <img src="images/img2.jpg" alt="" title="" style="float: left; padding: 0px 20px 10px 0px"/>
-                <p><a href="#">In nisi tortor, adipiscing congue mattis et, vehicula id neque.</a><br />
-Sed congue, ipsum ultricies dapibus malesuada, ligula purus pellentesque tellus, eu sagittis urna velit id justo. Donec vestibulum mauris eget massa egestas facilisis. Cras odio purus, condimentum non lacinia at, gravida sed leo. In sed ipsum id mi rutrum luctus. Nullam semper tristique lacus ut tincidunt. </p><br />
-<p><a href="#">Aenean ac sapien vitae sapien consectetur rhoncus. </a><br />
-Pellentesque libero nunc, consequat eu rutrum eu, convallis sit amet mauris. Etiam vehicula tincidunt turpis, ut varius mauris sodales et. Pellentesque id leo et metus consectetur venenatis vitae vehicula tellus. Etiam imperdiet varius lacus, et vulputate eros ullamcorper imperdiet.</p>
-        <div class="more"><a href="#">mas</a></div>
-        <div class="grey_border"></div>
-        
-        <div class="column3_box">
-            <div class="column1">
-                <h2>Quisque dignissim commodo fermentum</h2>
-                <p><a href="#">Aenean venenatis dictum sapien vitae porttitor.</a><br /> 
-Morbi ultrices dignissim est, vel placerat arcu viverra et. Duis sagittis posuere dignissim. Donec et elit risus, sit amet tempor libero. Ut et porta odio. Integer pharetra pretium dolor sit amet porttitor. Praesent id elementum nisl. Aliquam ac lectus ac felis venenatis porta et eget nisi.</p>
-                <div class="more"><a href="#">mas</a></div>
+<div id="content">	
+    <div id="contact">
+        <div id="contact_left">
+            <h2>Ingresar a su cuenta</h2>
+            <a href="#"><img src="images/login.jpg" alt="location" title="location" class="location" /></a>
+            <div class="grey_border"></div>
+            
+            <div id="contact_form">
+            	<form id="form2" name='sesion' action='http://localhost:8080/Practica-de-laboratorio-01-Servlets-JSP-y-JDBC/InicioSesion' method='get'>
+              
+                    <fieldset>
+                       
+                        <label class="labelform">Correo:</label><input id="correo" type="text" name="correo"  alt=""/><br />
+                        <label class="labelform">Contraseña:</label><input id="password" type="text" name="password"  alt=""/><br />
+
+                        <input type="submit" id="contact-submit" value="login"/>
+                        <input type="button" id="contact-clear" value="Reset"/>
+                    </fieldset>
+                   </form>
             </div>
-            <div class="column2">
-                <h2>Donec vestibulum mauris eget massa</h2>
-                <p><a href="">Cras odio purus, condimentum non lacinia at, gravida sed leo.</a><br />
-In sed ipsum id mi rutrum luctus. Nullam semper tristique lacus ut tincidunt. Aenean ac sapien vitae sapien consectetur rhoncus. Pellentesque libero nunc, consequat eu rutrum eu, convallis sit amet mauris. </p>
-            <div class="more"><a href="#">mas</a></div>
-            </div>
-            <div class="column3">
-                <h2>Fusce sem nibh, varius a fringilla at</h2>
-                <p><a href="#">Suspendisse potenti.</a><br />
-Etiam rhoncus quam ut velit iaculis id egestas diam eleifend. Integer auctor felis risus. Maecenas vitae massa enim, eget fermentum velit. Cras tempor orci vitae nisl posuere dapibus. Ut tempus eleifend nunc eleifend venenatis. Nam sollicitudin risus a nisl vestibulum </p>
-            <div class="more"><a href="#">mas</a></div>
-            </div>
-            <div class="clear"></div>
+        </div>
+        <div id="contact_right">
+            <h2>Quisque Tempor</h2>
+            <p><a href="#">Quisque tempor, tellus in placerat feugiat, metus massa pellentesque elit, id semper odio enim quis tellus.</a> 
+Donec urna ipsum, bibendum eget malesuada nec, semper ut libero. Vestibulum id felis sem, quis convallis lacus. Donec lacinia mi vitae metus cursus sed mollis ligula mattis. 
+Cras convallis iaculis erat, et venenatis turpis gravida non. Ut vehicula leo tempor dui scelerisque aliquam eget id odio. Praesent euismod egestas porta. Nulla imperdiet feugiat ipsum, id aliquam tortor mollis ut. Donec eget </p>
+            <div class="read2"><a href="#">read more</a></div>
+            
+            <h2>Meet Our Company</h2>
+                <div class="pad_left" style="background: url(images/house.png) no-repeat 0px 3px">
+                    1234 Some Street, Brooklyn, NY 11201
+                </div>
+                <div class="pad_left" style="background: url(images/phone.png) no-repeat 0px 2px">
+                    Phone:  1(234) 567 8910<br />
+                    Fax: 1(234) 567 8910
+                </div>
+                <div class="pad_left" style="background: url(images/contact_icon.png) no-repeat 0px 5px">
+                    General: companyname@yahoo.com<br />
+                    Support: support@yahoo.com
+                </div>
         </div>
         <div class="clear"></div>
+    </div>
+    
+    
+    
+    
     
     <div id="footer_repeat_bg">
         <div id="footer_bg">
             <div id="footer_width">
                 <div id="footer_top">
                     <div id="footer_left">
-                        <h2>Acerca De</h2>
+                        <h2>About Us</h2>
                         <img src="images/img1.jpg" alt="" title="" style="float: left; padding: 0px 20px 10px 0px"/>
-                        <p><a href="#">Morbi id vehicula</a> <br />
+                        <p><a href="#">Morbi id vehicula orci.</a> 
 Ut consequat commodo nunc nec tincidunt. Pellentesque vitae gravida nulla. Aliquam fermentum ipsum et mauris rutrum ac ornare convallis justo in eros fermentum eget cursus augue cursus. Donec sit amet eros eget ligula blandit congue. </p>
                     </div>
                     <div id="footer_middle">
@@ -80,14 +95,14 @@ Ut consequat commodo nunc nec tincidunt. Pellentesque vitae gravida nulla. Aliqu
                         </ul>
                     </div>
                     <div id="footer_right">
-                        <h2>Formulario Contacto</h2>
+                        <h2>Contact Form</h2>
                         <form id="form1" method="post" action="#">
                             <fieldset>
-                                <label>Nombre:</label><input id="text1" type="text" name="text1" value="" alt=""/>
+                                <label>Name:</label><input id="text1" type="text" name="text1" value="" alt=""/>
                                 <div class="clear"></div>
                                 <label>E-mail:</label><input id="text2" type="text" name="text2" value="" alt=""/><br />
                                 <textarea id="text_mess" name="text_mess" cols="0" rows="0"></textarea><br />
-                                <input type="submit" id="login-submit" value="Emviar"/>
+                                <input type="submit" id="login-submit" value="Send"/>
                                </fieldset>
                         </form>
                     </div>
@@ -110,7 +125,6 @@ Ut consequat commodo nunc nec tincidunt. Pellentesque vitae gravida nulla. Aliqu
             </div>
         </div>
     </div><div class="clear"></div>
-    </div>
-    
+</div>
 </body>
 </html>

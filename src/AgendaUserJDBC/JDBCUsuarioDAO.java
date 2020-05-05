@@ -162,6 +162,38 @@ public class JDBCUsuarioDAO extends JDBCGenericDAO<Usuario , String> implements 
 		return list;
 	}
 
+	@Override
+	public Usuario findByCorreo(String correobusqueda) {
+		// TODO Auto-generated method stub
+		Usuario usuario = null;
+		ResultSet rs = conexionUno.query("SELECT * FROM Usuario WHERE usu_correo='" + correobusqueda + "'");
+		try {
+			if (rs != null && rs.next()) {
+				
+				usuario = new Usuario(rs.getString("usu_cedula"), rs.getString("usu_nombre"), rs.getString("usu_apellido"),
+										rs.getString("usu_correo"), rs.getString("usu_password"));
+			}
+		} catch (SQLException e) {
+			System.out.println(">>>WARNING (JDBCUsuarioDAO:read): " + e.getMessage());
+		}
+		if (usuario == null) {
+			return null;
+		}
+		Set<Telefono> telefonos = DAOFactory.getFactory().getTelefonoDao().findByUsuarioId(usuario.getCedula());
+		if (telefonos != null) {
+			Set<Telefono> telefonosFinal = new HashSet<Telefono>();
+			for (Telefono telefono : telefonos) {
+				telefono.setUsuario(usuario);
+				telefonosFinal.add(telefono);
+			}
+			usuario.setTelefonos(telefonosFinal);
+		}
+
+		return usuario;
+	
+
+	}
+
 
 
 

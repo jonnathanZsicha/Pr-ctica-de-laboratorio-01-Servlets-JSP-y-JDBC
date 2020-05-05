@@ -84,8 +84,10 @@ public class Usuario implements Serializable {
 	@Override
 	public String toString() {
 		return "Usuario [cedula=" + cedula + ", nombre=" + nombre + ", apellido=" + apellido + ", correo=" + correo
-				+ ", password=" + password + ", telefonos=" + telefonos + "]";
+				+ ", password=" + password + "]";
 	}
+
+
 
 	
 	
