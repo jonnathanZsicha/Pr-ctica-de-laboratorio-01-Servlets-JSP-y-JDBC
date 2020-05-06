@@ -8,6 +8,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import AgendaUserDAO.DAOFactory;
 import AgendaUserDAO.TelefonoDAO;
 import AgendaUserModel.Telefono;
 import AgendaUserModel.Usuario;
@@ -143,4 +144,24 @@ public class JDBCTelefonoDAO extends JDBCGenericDAO<Telefono, Integer> implement
 	}
 		return id;
 }
+
+
+	@Override
+	public Telefono findByNumero(String numero) {
+		// TODO Auto-generated method stub
+		Telefono telefono = null;
+		ResultSet rs = conexionUno.query("SELECT * FROM Telefono WHERE tel_numero='" + numero + "'");
+		try {
+			if (rs != null && rs.next()) {
+				
+				telefono = new Telefono(rs.getInt("tel_codigo"), rs.getString("tel_numero"), rs.getString("tel_tipo"),
+										rs.getString("tel_operadora"));
+			}
+		} catch (SQLException e) {
+			System.out.println(">>>WARNING (JDBCUsuarioDAO:findbynuemro): " + e.getMessage());
+		}
+		
+		return telefono;
+
+	}
 }

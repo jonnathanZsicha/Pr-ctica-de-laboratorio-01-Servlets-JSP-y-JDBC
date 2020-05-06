@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="../CSS/styles.css" rel="stylesheet" type="text/css" media="screen" />
-    <title>FormularioRegistrarse</title>
+    <title>Lista de Telefonos</title>
 </head>
 <body>
     <div id="menu_bg">
@@ -37,6 +37,18 @@
             <div id="contact_form">
             	<div class="row">
 		<!-- <div class="alert alert-success" *ngIf='message'>{{message}}</div> -->
+		
+		<form action="<%=request.getContextPath()%>/buscartelefono?correo=<c:out value='${correo}' />" method="get">
+			
+			<tr>
+				<td>Buscar_Telefono</td>
+				<td><input type="text" name="numero"></td>
+				<td><input type="text" name="correo" value='${correo}'></td>
+			</tr>
+				<td><input type="hidden" name="parametro" value="sesion"></td>
+				<td><input type="submit" value="buscar"  ></td>
+			</tr>
+		</form>
 
 		<div class="container">
 			<h3 class="text-center">Lista de Telefonos</h3>

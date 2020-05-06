@@ -66,6 +66,9 @@ public class InicioSesion extends HttpServlet {
 						boolean bool =  (boolean) session.getAttribute("acceso");
 						System.out.println("creacion 1ra sesion acceso :"+ bool);
 				       Set<Telefono> telefonos=telefonoDAO.findByUsuarioId(user.getCedula());
+				       
+						
+					
 				       System.out.println(telefonos);
 				        request.setAttribute("telefonos", telefonos);
 				        /*
