@@ -42,6 +42,26 @@
 			<h3 class="text-center">Lista de Telefonos</h3>
 			<hr>
 			<div class="container text-left">
+			<form action="<%=request.getContextPath()%>/new?correo=<c:out value='${correo}' />" method="get">
+			
+			<tr>
+				<td>Numero</td>
+				<td><input type="text" name="numero"></td>
+				<td><input type="text" name="correo" value='${correo}'></td>
+			</tr>
+			<tr>
+				<td>Tipo</td>
+				<td><input type="password" name="tipo"></td>
+			</tr>
+			<tr>
+			<tr>
+				<td>Operadora</td>
+				<td><input type="text" name="operadora"></td>
+			</tr>
+				<td><input type="hidden" name="parametro" value="sesion"></td>
+				<td><input type="submit" value="new"  ></td>
+			</tr>
+		</form>
 			
 			<a href="<%=request.getContextPath()%>/new?correo=<c:out value='${correo}' />" class="btn btn-success">Nuevo_telefono
             </a>

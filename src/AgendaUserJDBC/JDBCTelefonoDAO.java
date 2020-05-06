@@ -36,7 +36,7 @@ public class JDBCTelefonoDAO extends JDBCGenericDAO<Telefono, Integer> implement
 	public Telefono read(Integer id) {
 		// TODO Auto-generated method stub
 		Telefono telefono = null;
-		ResultSet rsTelefono = conexionUno.query("SELECT * FROM Telefono WHERE id=" + id);
+		ResultSet rsTelefono = conexionUno.query("SELECT * FROM Telefono WHERE tel_codigo=" + id);
 		try {
 			if (rsTelefono != null && rsTelefono.next()) {
 				telefono = new Telefono(rsTelefono.getInt("tel_codigo"), rsTelefono.getString("tel_numero"),
@@ -125,6 +125,22 @@ public class JDBCTelefonoDAO extends JDBCGenericDAO<Telefono, Integer> implement
 
 		return list;
 	}
-	
 
+
+	@Override
+	public int findultimoid() {
+		// TODO Auto-generated method stub
+		ResultSet rsTelefono = conexionUno.query("SELECT MAX(tel_codigo) AS id FROM telefono");
+		int id = 0;
+		
+		try {
+			while (rsTelefono.next()) {
+				 id = rsTelefono.getInt("id");
+			}
+			
+		} catch (SQLException e) {
+			System.out.println(">>>WARNING (JDBCTelefonoDAO:finultimoId): " + e.getMessage());
+	}
+		return id;
+}
 }

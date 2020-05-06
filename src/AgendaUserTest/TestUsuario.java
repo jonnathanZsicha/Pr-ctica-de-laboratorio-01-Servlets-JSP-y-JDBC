@@ -73,11 +73,13 @@ public class TestUsuario {
 	}
 
 	Telefono p7 = new Telefono(7, "0981951047", "Celu7" , "Movistar7"  );
+	
 	p7.setUsuario(sb1);
 	telefonoDAO.create(p7);
 	System.out.print("\n---Creación de telefono\n");
 	System.out.println(telefonoDAO.find());
 
+	
 	System.out.print("\nBuscar usuario 2\n");
 	Usuario sb4 = usuarioDAO.read("0106232812");
 	System.out.println(sb4);
@@ -114,6 +116,12 @@ public class TestUsuario {
 			System.out.println(telefono);
 		}
 	}
+	
+	Telefono p8 = new Telefono(8, "0981951047", "Celu8" , "Movistar8"  );
+	p8.setUsuario(sb3);
+	telefonoDAO.create(p8);
+	System.out.print("\n---Creación de telefono\n");
+	System.out.println(telefonoDAO.find());
 	
 	
 	
