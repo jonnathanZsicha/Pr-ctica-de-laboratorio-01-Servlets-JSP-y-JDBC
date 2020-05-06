@@ -1,7 +1,9 @@
 package AgendaUserServlet;
 
+import java.awt.List;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Set;
 
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
@@ -10,10 +12,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.sound.midi.Soundbank;
 
 import AgendaUserDAO.DAOFactory;
+import AgendaUserDAO.TelefonoDAO;
 import AgendaUserDAO.UsuarioDAO;
-
+import AgendaUserModel.Telefono;
 import AgendaUserModel.Usuario;
 
 /**
@@ -45,44 +49,50 @@ public class InicioSesion extends HttpServlet {
 		// TODO Auto-generated method stub
 		
 		UsuarioDAO usuarioDAO = DAOFactory.getFactory().getUsuarioDao();
+		TelefonoDAO telefonoDAO = DAOFactory.getFactory().getTelefonoDao();
 		PrintWriter out = response.getWriter();
 		HttpSession session = request.getSession(true);
-		
 		String correobusqueda = request.getParameter("correo");
 		Usuario user = usuarioDAO.findByCorreo(correobusqueda);
-		
-		if (user != null) {
-			System.out.println(user);
-			String correo = user.getCorreo();
-			String password= user.getPassword();
-			
-			if (session.isNew()) {
-				session.setAttribute("acceso", true);
-				session.setAttribute("correo",correo );
-				if ((correo.equals(request.getParameter("correo"))) && (password.equals(request.getParameter("password")))  ) {
-					boolean bool =  (boolean) session.getAttribute("acceso");
-					System.out.println("creacion 1ra sesion acceso :"+ bool);
-					request.getRequestDispatcher( "/Formulario.html" ).forward( request, response );
-				}	
-			}else {
-				if ((correo.equals(request.getParameter("correo"))) && (password.equals(request.getParameter("password")))  ) {
+		String url = null;
+		try {
+			if (user != null) {
+				System.out.println(user);
+				String correo = user.getCorreo();
+				String password= user.getPassword();
+				if (session.isNew()) {
+					session.setAttribute("acceso", true);
 					session.setAttribute("correo",correo );
-					request.getRequestDispatcher( "/Formulario.html" ).forward( request, response );
+					if ((correo.equals(request.getParameter("correo"))) && (password.equals(request.getParameter("password")))  ) {
+						boolean bool =  (boolean) session.getAttribute("acceso");
+						System.out.println("creacion 1ra sesion acceso :"+ bool);
+				       Set<Telefono> telefonos=telefonoDAO.findByUsuarioId(user.getCedula());
+				       System.out.println(telefonos);
+				        request.setAttribute("listTelefonos", telefonos);
+				        /*
+						for (Telefono telefonos : telefonoDAO.findByUsuarioId(user.getCedula())) {
+							System.out.println(telefonos);
+						}*/
+						url = "/JSP+JSTL/TelefonosList.jsp";
+					}	
+				}else {
+					if ((correo.equals(request.getParameter("correo"))) && (password.equals(request.getParameter("password")))  ) {
+						session.setAttribute("correo",correo );
+						Set<Telefono> telefonos=telefonoDAO.findByUsuarioId(user.getCedula());
+						System.out.println(telefonos);
+						request.setAttribute("listTelefonos", telefonos);
+						url = "/JSP+JSTL/TelefonosList.jsp";
+					}
+					
 				}
 				
 			}
 			
-		}else {
-			
-			request.getRequestDispatcher( "/login.html" ).forward( request, response );
+		}catch (Exception e) {
+			// TODO: handle exception
 		}
-						
-		response.setContentType("text/html");
-		out.println("<html><head><title><Cookies></title></head><body>");
-		out.println("<p> caracteres incorrectos....</p></body></html>");
-		
-		
-	
+		System.out.println(url);
+		getServletContext().getRequestDispatcher(url).forward(request, response);
 	
 	}
 }

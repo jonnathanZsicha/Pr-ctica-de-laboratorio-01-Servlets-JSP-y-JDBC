@@ -25,13 +25,9 @@ public class TelefonoServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	private static final Object listUser = null;
-	
-    private TelefonoDAO telefonoDAO;
-    
-    public void init() {
-    	telefonoDAO = DAOFactory.getFactory().getTelefonoDao();
-    }
-	
+	private TelefonoDAO telefonoDAO;
+	private UsuarioDAO userDAO;
+		
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -47,7 +43,10 @@ public class TelefonoServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		String url = null;
         String action = request.getServletPath();
-
+       userDAO = DAOFactory.getFactory().getUsuarioDao();
+       telefonoDAO = DAOFactory.getFactory().getTelefonoDao();
+	}
+/**
         try {
             switch (action) {
                 case "/new":
@@ -66,7 +65,7 @@ public class TelefonoServlet extends HttpServlet {
                     updateUser(request, response);
                     break;
                 default:
-                    listUser(request, response);
+                    listtelf(request, response);
                     break;
             }
         } catch (SQLException ex) {
@@ -74,17 +73,13 @@ public class TelefonoServlet extends HttpServlet {
         }
     }
 
-    private void listUser(HttpServletRequest request, HttpServletResponse response)
+    private void listtelf(HttpServletRequest request, HttpServletResponse response)
     throws SQLException, IOException, ServletException {
-    	Usuario sb4 = userDAO.read("0106232812");
-    	System.out.println(sb4);
-    	for (Telefono telefono : sb4.getTelefonos()) {
-    		System.out.println(telefono);
+    	System.out.println(telefonoDAO.read(5));
+    	
     	}
-        request.setAttribute("listUser", listUser);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("TelefonosList.jsp");
-        dispatcher.forward(request, response);
-    }
+     
+    
 
     private void showNewForm(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
