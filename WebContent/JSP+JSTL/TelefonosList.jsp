@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+ <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -41,9 +42,10 @@
 			<h3 class="text-center">Lista de Telefonos</h3>
 			<hr>
 			<div class="container text-left">
+			
+			<a href="<%=request.getContextPath()%>/new?correo=<c:out value='${correo}' />" class="btn btn-success">Nuevo_telefono
+            </a>
 
-				<a href="<%=request.getContextPath()%>/new" class="btn btn-success">Add
-					New Telefono</a>
 			</div>
 			<br>
 			<table class="table table-bordered">
@@ -53,21 +55,24 @@
 						<th>NUMERO</th>
 						<th>TIPO</th>
 						<th>OPERADOR</th>
-						<th>USUARIO</th>
+						<th>Operaciones</th>
 					</tr>
 				</thead>
 				<tbody>
 					<!--   for (Todo todo: todos) {  -->
-					<c:forEach var="telefono" items="${ListUser}">
+					<c:set var = "p1" value = "${requestScope['telefonos']}" />
+					<c:forEach var="telefono" items="${telefonos}">
 
 						<tr>
 							<td><c:out value="${telefono.id}" /></td>
 							<td><c:out value="${telefono.numero}" /></td>
 							<td><c:out value="${telefono.tipo}" /></td>
-							<td><c:out value="${telefono.opradora}" /></td>
+							<td><c:out value="${telefono.operadora}" /></td>
 							<td><a href="edit?id=<c:out value='${telefono.id}' />">Edit</a>
 								&nbsp;&nbsp;&nbsp;&nbsp; <a
-								href="delete?id=<c:out value='${telefono.id}' />">Delete</a></td>
+								href="delete?id=<c:out value='${telefono.id}' />">Delete</a>
+								<a
+								href="modify?id=<c:out value='${telefono.id}' />">Modify</a></td>
 						</tr>
 					</c:forEach>
 					<!-- } -->

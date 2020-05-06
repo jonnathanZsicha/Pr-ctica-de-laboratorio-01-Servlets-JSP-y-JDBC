@@ -38,9 +38,6 @@ public class InicioSesion extends HttpServlet {
 	/**
 	 * @see Servlet#init(ServletConfig)
 	 */
-	public void init(ServletConfig config) throws ServletException {
-		// TODO Auto-generated method stub
-	}
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
@@ -50,7 +47,7 @@ public class InicioSesion extends HttpServlet {
 		
 		UsuarioDAO usuarioDAO = DAOFactory.getFactory().getUsuarioDao();
 		TelefonoDAO telefonoDAO = DAOFactory.getFactory().getTelefonoDao();
-		PrintWriter out = response.getWriter();
+
 		HttpSession session = request.getSession(true);
 		String correobusqueda = request.getParameter("correo");
 		Usuario user = usuarioDAO.findByCorreo(correobusqueda);
@@ -60,15 +57,17 @@ public class InicioSesion extends HttpServlet {
 				System.out.println(user);
 				String correo = user.getCorreo();
 				String password= user.getPassword();
+				String cedula=user.getCedula();
 				if (session.isNew()) {
 					session.setAttribute("acceso", true);
 					session.setAttribute("correo",correo );
+					session.setAttribute("cedula",cedula );
 					if ((correo.equals(request.getParameter("correo"))) && (password.equals(request.getParameter("password")))  ) {
 						boolean bool =  (boolean) session.getAttribute("acceso");
 						System.out.println("creacion 1ra sesion acceso :"+ bool);
 				       Set<Telefono> telefonos=telefonoDAO.findByUsuarioId(user.getCedula());
 				       System.out.println(telefonos);
-				        request.setAttribute("listTelefonos", telefonos);
+				        request.setAttribute("telefonos", telefonos);
 				        /*
 						for (Telefono telefonos : telefonoDAO.findByUsuarioId(user.getCedula())) {
 							System.out.println(telefonos);
@@ -78,9 +77,10 @@ public class InicioSesion extends HttpServlet {
 				}else {
 					if ((correo.equals(request.getParameter("correo"))) && (password.equals(request.getParameter("password")))  ) {
 						session.setAttribute("correo",correo );
+						session.setAttribute("cedula",cedula );
 						Set<Telefono> telefonos=telefonoDAO.findByUsuarioId(user.getCedula());
 						System.out.println(telefonos);
-						request.setAttribute("listTelefonos", telefonos);
+						request.setAttribute("telefonos", telefonos);
 						url = "/JSP+JSTL/TelefonosList.jsp";
 					}
 					
