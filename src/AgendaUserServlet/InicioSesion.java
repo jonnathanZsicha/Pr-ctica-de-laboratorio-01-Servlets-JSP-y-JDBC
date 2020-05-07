@@ -95,7 +95,7 @@ public class InicioSesion extends HttpServlet {
 			// TODO: handle exception
 		}
 		System.out.println(url);
-		getServletContext().getRequestDispatcher(url).forward(request, response);
+		request.getRequestDispatcher(url).forward(request, response);
 	
 	}
 }

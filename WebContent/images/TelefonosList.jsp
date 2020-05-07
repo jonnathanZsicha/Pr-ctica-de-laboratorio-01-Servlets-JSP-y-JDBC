@@ -6,7 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="../CSS/styles.css" rel="stylesheet" type="text/css" media="screen" />
+    <link href="WebContent/CSS/styles.css" rel="stylesheet" type="text/css" media="screen" />
     <title>Lista de Telefonos</title>
 </head>
 <body>
@@ -16,7 +16,7 @@
                <li><a href="index.html" class="active">Home</a></li>
                 <li><a href="formulario.html">Registrarse</a></li>
                 <li><a href="login.html">iniciar Sesion</a></li>
-                <li><img src="../CSS/images/rss.png" alt="" title="" style="padding: 0px; margin: 0px;"/></li>
+                <li><img src="/Practica-de-laboratorio-01-Servlets-JSP-y-JDBC/WEbContent/CSS/images/rss.png" alt="" title="" style="padding: 0px; margin: 0px;"/></li>
             </ul>
         </div>
     </div>
@@ -31,7 +31,7 @@
     <div id="contact">
         <div id="contact_left">
             <h2>BIENVENIDO</h2>
-            <a href="#"><img src="../CSS/images/unlock.png" alt="location" title="location" class="location" /></a>
+            <a href="#"><img src="/CSS/images/login.jpg" alt="location" title="location" class="location" /></a>
             <div class="grey_border"></div>
             
             <div id="contact_form">

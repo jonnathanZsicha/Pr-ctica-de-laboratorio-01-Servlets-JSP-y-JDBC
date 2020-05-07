@@ -7,6 +7,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import AgendaUserDAO.DAOFactory;
+import AgendaUserDAO.TelefonoDAO;
+import AgendaUserDAO.UsuarioDAO;
+import AgendaUserModel.Usuario;
+
 /**
  * Servlet implementation class UsuarioControler
  */
@@ -27,7 +32,18 @@ public class UsuarioController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		UsuarioDAO usuarioDAO = DAOFactory.getFactory().getUsuarioDao();
+		TelefonoDAO telefonoDAO = DAOFactory.getFactory().getTelefonoDao();
+		String cedula = request.getParameter("cedula");
+		String nombre = request.getParameter("nombre");
+		String apellido = request.getParameter("apellido");
+		String correo = request.getParameter("correo");
+		String password= request.getParameter("password");
+		
+		Usuario user = new Usuario(cedula, nombre, apellido, correo, password);
+		usuarioDAO.create(user);
+		System.out.println("se ha registrado exitoso el usuario");
+		
 	}
 
 	/**
