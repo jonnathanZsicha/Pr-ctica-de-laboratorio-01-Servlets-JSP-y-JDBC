@@ -25,7 +25,7 @@ body {
     font-size: 12px;
     line-height: 20px;
     color: #d9d4d4;
-    background: #0266F2 url(images/bg.jpg) top no-repeat;
+    background: #0266F2 url(/Practica01/images/bg.jpg) top no-repeat;
 }
 
 /*logo*/
@@ -33,7 +33,7 @@ body {
 #logo{
 	width: 1024px;
 	margin: 0 auto;
-	padding: 20px 0px 380px 0px;
+	padding: 20px 0px 150px 0px;
 }
 
 #logo H1 a
@@ -83,7 +83,7 @@ a small{
 
 /*menu*/
 #menu_bg{
-	background: url(images/menu_bg.png) repeat-x top;
+	background: url(/Practica01/images/menu_bg.png) repeat-x top;
 	height: 63px;
 }
 
@@ -118,19 +118,19 @@ a small{
 
 #menu ul li a:hover, #menu ul li .active{
     color: #ffffff;
-    background: url(images/hover.jpg) repeat-x top;
+    background: url(/Practica01/images/hover.jpg) repeat-x top;
 }
 
 /*header*/
 
 #header_repeat_bg{
-	background: url(images/header_bg_repeat.jpg) repeat-x top;
+	background: url(/Practica01/images/header_bg_repeat.jpg) repeat-x top;
 	height: 335px;
 	margin-bottom: 20px;
 }
 
 #header_bg{
-	background: url(images/header_bg.jpg) no-repeat center;
+	background: url(/Practica01/images/header_bg.jpg) no-repeat center;
 	height: 335px;
 }
 
@@ -156,7 +156,7 @@ a small{
 .learn{
 	width: 172px;
 	height: 41px;
-	background: url(images/header_button.png) no-repeat top left;
+	background: url(/Practica01/images/header_button.png) no-repeat top left;
 	float: right;
 	text-align: center;
 	padding-top: 18px;
@@ -182,7 +182,7 @@ a small{
 }
 
 #button_box a{
-	background: url(images/round_button1.jpg) no-repeat top left;
+	background: url(/Practica01/images/round_button1.jpg) no-repeat top left;
 	width: 12px;
 	height: 12px;
 	float: left;
@@ -191,7 +191,7 @@ a small{
 }
 
 #button_box a:hover, #button_box .active{
-	background: url(images/round_button.jpg) no-repeat top left;
+	background: url(/Practica01/images/round_button.jpg) no-repeat top left;
 }
 
 /*content*/
@@ -205,7 +205,7 @@ a small{
 .more{
 	width: 74px;
 	height: 27px;
-	background: url(images/send.png) no-repeat top left;
+	background: url(/Practica01/images/send.png) no-repeat top left;
 	float: right;
 	text-align: center;
 	padding-top: 4px;
@@ -343,13 +343,13 @@ a small{
 	color: #ffffff;
 	display: block;
 	padding: 5px 0px 0px 30px;
-	background: url(images/ls.png) no-repeat left center;
+	background: url(/Practica01/images/ls.png) no-repeat left center;
 }
 
 #footer_middle .ul_hover_bg li a:hover{
 	height: 27px;
 	color: #a4a3a3;
-	background: url(images/ul_hover.jpg) no-repeat top left;
+	background: url(/Practica01/images/ul_hover.jpg) no-repeat top left;
 	display: block;
 }
 
@@ -371,7 +371,7 @@ a small{
 #login-submit, #contact-submit{
     width: 74px;
     height: 27px;
-    background: url(images/send.png) no-repeat left top;
+    background: url(/Practica01/images/send.png) no-repeat left top;
     border: none;
     font-family: Arial,Helvetica,sans-serif;
     font-size: 14px;
@@ -388,7 +388,7 @@ a small{
     padding-left: 10px;
     padding-right: 10px;
     border: none;
-    background: url(images/footer_input.jpg);
+    background: url(/Practica01/images/footer_input.jpg);
     background-repeat:no-repeat;
     background-position:left top;
     color: #000000;
@@ -405,7 +405,7 @@ a small{
     padding-right: 10px;
     padding-bottom: 10px;
     border: none;
-    background: url(images/footer_mess.jpg);
+    background: url(/Practica01/images/footer_mess.jpg);
     background-repeat:no-repeat;
     background-position:left top;
     color: #000000;
@@ -432,7 +432,7 @@ a small{
 .box_img2 {
     width:  298px;
     height: 275px;
-    background: url(images/gal_box_bg.jpg) 0px 0px no-repeat;
+    background: url(/Practica01/images/gal_box_bg.jpg) 0px 0px no-repeat;
     padding: 15px 15px 0px 15px;
     float:left;
 	color: #ffffff
@@ -497,7 +497,7 @@ a small{
 #contact-submit{
     width: 74px;
     height: 27px;
-    background: url(images/send.png) no-repeat left top;
+    background: url(/Practica01/images/send.png) no-repeat left top;
     border: none;
     font-family: Arial,Helvetica,sans-serif;
     font-size: 14px;
@@ -509,7 +509,7 @@ a small{
 #contact-clear{
     width: 74px;
     height: 27px;
-    background: url(images/send.png) no-repeat left top;
+    background: url(/Practica01/images/send.png) no-repeat left top;
     border: none;
     font-family: Arial,Helvetica,sans-serif;
     font-size: 14px;
@@ -527,7 +527,7 @@ a small{
     padding-left: 10px;
     padding-right: 10px;
     border: none;
-    background: url(images/input_contact.jpg);
+    background: url(/Practica01/images/input_contact.jpg);
     background-repeat:no-repeat;
     background-position:left top;
     color: #ffffff;
@@ -542,7 +542,7 @@ a small{
     padding-bottom: 15px;
     border: none;
 	font-family: Arial, Helvetica, sans-serif;
-    background: url(images/textarea_contact.jpg);
+    background: url(/Practica01/images/textarea_contact.jpg);
     background-repeat:no-repeat;
     background-position:left top;
     color: #ffffff;
@@ -579,7 +579,7 @@ a small{
 }
 
 .news_top_left{
-    background: url(images/date_bg.jpg) no-repeat right;
+    background: url(/Practica01/images/date_bg.jpg) no-repeat right;
     width: 86px;
     height: 80px;
     float: left;
@@ -611,13 +611,13 @@ a small{
 
 .title_post_left{
 	float: left;
-	background: url(images/user_icon.jpg) no-repeat 0px 0px;
+	background: url(/Practica01/images/user_icon.jpg) no-repeat 0px 0px;
 	padding: 0px 0px 0px 25px;
 }
 
 .title_post_right{
 	float: right;
-	background: url(images/comments_icon.jpg) no-repeat 0px 0px;
+	background: url(/Practica01/images/comments_icon.jpg) no-repeat 0px 0px;
 	padding: 0px 0px 0px 25px;
 }
 
@@ -639,7 +639,7 @@ a small{
 #contact_right .ul_hover_bg li a:hover{
 	height: 27px;
 	color: #a4a3a3;
-	background: url(images/ul_hover_blog.jpg) no-repeat top left;
+	background: url(/Practica01/images/ul_hover_blog.jpg) no-repeat top left;
 	display: block;
 }
 
@@ -688,4 +688,29 @@ a small{
     /* width: 20px; */
     /* width: max-content; */
     display: -webkit-inline-box;
+}
+.customers {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+  color: brown;
+  font-size: 200%;
+  
+}
+
+.customers tr:nth-child(even){background-color: #f2f2f2;}
+
+.customers tr:hover {background-color: #ddb}
+
+.customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: white;
 }

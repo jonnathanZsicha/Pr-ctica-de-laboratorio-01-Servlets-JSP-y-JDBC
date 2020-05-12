@@ -10,13 +10,13 @@
         <body>
 
             <header>
-                <nav class="navbar navbar-expand-md navbar-dark" style="background-color: tomato">
+                <nav class="navbar navbar-expand-md navbar-dark" style="background-color: black">
                     <div>
-                        <a href="https://www.javaguides.net" class="navbar-brand"> APP Agenda </a>
+                        <a href="https://www.javaguides.net" class="navbar-brand">Agenda_Telefonica.com </a>
                     </div>
 
                     <ul class="navbar-nav">
-                        <li><a href="<%=request.getContextPath()%>/list" class="nav-link">telefonos</a></li>
+                        <li><a href="/Practica01/Html/index.html" class="nav-link">Home</a></li>
                     </ul>
                 </nav>
             </header>
@@ -35,20 +35,20 @@
                         </fieldset>
 
                         <fieldset class="form-group">
-                            <label>Nombre</label> <input type="text"  class="form-control" name="nombre">
+                            <label>Nombre</label> <input type="text"  class="form-control" name="nombre" required="required">
                         </fieldset>
 
                         <fieldset class="form-group">
-                            <label>Apellido</label> <input type="text" class="form-control" name="apellido">
+                            <label>Apellido</label> <input type="text" class="form-control" name="apellido" required="required">
                         </fieldset>
                          <fieldset class="form-group">
-                            <label>Correo</label> <input type="text" class="form-control" name="correo">
+                            <label>Correo</label> <input type="text" class="form-control" name="correo" required="required">
                         </fieldset>
                          <fieldset class="form-group">
-                            <label>Password</label> <input type="text" class="form-control" name="password">
+                            <label>Password</label> <input type="password" class="form-control" name="password" required="required">
                         </fieldset>
 
-                        <button type="submit" class="btn btn-success">Save</button>
+                        <button type="submit" class="btn btn-success">Guardar</button>
                         </form>
                     </div>
                 </div>

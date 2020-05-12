@@ -67,7 +67,7 @@ public class JDBCTelefonoDAO extends JDBCGenericDAO<Telefono, Integer> implement
 		// TODO Auto-generated method stub
 		
 		conexionUno.update("UPDATE Telefono SET tel_tipo = '" + telefono.getTipo() + "',tel_numero = '"
-				+ telefono.getNumero() + "' WHERE tel_codigo = " + telefono.getId());
+				+ telefono.getNumero() +"',tel_operadora = '" + telefono.getOperadora() + "'  WHERE tel_codigo = " + telefono.getId());
 		
 	}
 
@@ -147,21 +147,22 @@ public class JDBCTelefonoDAO extends JDBCGenericDAO<Telefono, Integer> implement
 
 
 	@Override
-	public Telefono findByNumero(String numero) {
+	public Set<Telefono> findByNumero(String numero) {
 		// TODO Auto-generated method stub
-		Telefono telefono = null;
+		Set<Telefono> list = new HashSet<Telefono>();
+		
 		ResultSet rs = conexionUno.query("SELECT * FROM Telefono WHERE tel_numero='" + numero + "'");
 		try {
-			if (rs != null && rs.next()) {
-				
-				telefono = new Telefono(rs.getInt("tel_codigo"), rs.getString("tel_numero"), rs.getString("tel_tipo"),
-										rs.getString("tel_operadora"));
+			while (rs.next()) {
+				Telefono telefono = new Telefono(rs.getInt("tel_codigo"), rs.getString("tel_numero"),
+						rs.getString("tel_tipo"),rs.getString("tel_operadora"));
+				list.add(telefono);
 			}
 		} catch (SQLException e) {
 			System.out.println(">>>WARNING (JDBCUsuarioDAO:findbynuemro): " + e.getMessage());
 		}
 		
-		return telefono;
+		return list;
 
 	}
 }

@@ -1,18 +1,17 @@
-package AgendaUserServlet;
+package AgendaUserServletController;
 
-import java.awt.List;
+
 import java.io.IOException;
-import java.io.PrintWriter;
+
 import java.util.Set;
 
-import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import javax.sound.midi.Soundbank;
+
 
 import AgendaUserDAO.DAOFactory;
 import AgendaUserDAO.TelefonoDAO;
@@ -66,16 +65,13 @@ public class InicioSesion extends HttpServlet {
 						boolean bool =  (boolean) session.getAttribute("acceso");
 						System.out.println("creacion 1ra sesion acceso :"+ bool);
 				       Set<Telefono> telefonos=telefonoDAO.findByUsuarioId(user.getCedula());
-				       
-						
-					
-				       System.out.println(telefonos);
+				       System.out.println("estos son todos los telefonos" + telefonos);
 				        request.setAttribute("telefonos", telefonos);
 				        /*
 						for (Telefono telefonos : telefonoDAO.findByUsuarioId(user.getCedula())) {
 							System.out.println(telefonos);
 						}*/
-						url = "/JSP+JSTL/TelefonosList.jsp";
+						url = "/JSP/TelefonosList.jsp";
 					}	
 				}else {
 					if ((correo.equals(request.getParameter("correo"))) && (password.equals(request.getParameter("password")))  ) {
@@ -84,7 +80,7 @@ public class InicioSesion extends HttpServlet {
 						Set<Telefono> telefonos=telefonoDAO.findByUsuarioId(user.getCedula());
 						System.out.println(telefonos);
 						request.setAttribute("telefonos", telefonos);
-						url = "/JSP+JSTL/TelefonosList.jsp";
+						url = "/JSP/TelefonosList.jsp";
 					}
 					
 				}

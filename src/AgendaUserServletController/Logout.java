@@ -1,4 +1,4 @@
-package AgendaUserServlet;
+package AgendaUserServletController;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -6,23 +6,21 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-import AgendaUserDAO.DAOFactory;
-import AgendaUserDAO.TelefonoDAO;
-import AgendaUserDAO.UsuarioDAO;
-import AgendaUserModel.Usuario;
+import javax.servlet.http.HttpSession;
 
 /**
- * Servlet implementation class UsuarioControler
+ * Servlet implementation class Logout
  */
-@WebServlet("/UsuarioControler")
-public class UsuarioController extends HttpServlet {
+@WebServlet("/Logout")
+public class Logout extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	String salir= "salir";
+	String url= null;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public UsuarioController() {
+    public Logout() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -32,18 +30,18 @@ public class UsuarioController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		UsuarioDAO usuarioDAO = DAOFactory.getFactory().getUsuarioDao();
-		TelefonoDAO telefonoDAO = DAOFactory.getFactory().getTelefonoDao();
-		String cedula = request.getParameter("cedula");
-		String nombre = request.getParameter("nombre");
-		String apellido = request.getParameter("apellido");
-		String correo = request.getParameter("correo");
-		String password= request.getParameter("password");
-		
-		Usuario user = new Usuario(cedula, nombre, apellido, correo, password);
-		usuarioDAO.create(user);
-		System.out.println("se ha registrado exitoso el usuario");
-		
+		try {
+			if (salir.equals(request.getParameter("salir"))) {
+				HttpSession session = request.getSession(true);
+				session.invalidate();
+				System.out.println("session destruida");
+				url = "/Html/index.html";	
+				
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		getServletContext().getRequestDispatcher(url).forward(request, response);
 	}
 
 	/**

@@ -11,7 +11,7 @@
         <body>
 
             <header>
-                <nav class="navbar navbar-expand-md navbar-dark" style="background-color: tomato">
+                <nav class="navbar navbar-expand-md navbar-dark" style="background-color: black">
                     <div>
                         <a href="https://www.javaguides.net" class="navbar-brand"> APP Agenda </a>
                     </div>
@@ -29,21 +29,22 @@
 
                 
                        
-                         <form action="<%=request.getContextPath()%>/update?id='${id}' />" method="get">
+                         <form action="<%=request.getContextPath()%>/ActualizarTelefonoController?id='${id}'&correo='${correo}'" method="get">
                          
-                         <input type="text" " class="form-control" name="id" required="required" value='${id}'>
+                         <input type="hidden"  class="form-control" name="id" required="required" value='${id}'>
+                         <input type="hidden"  class="form-control" name="correo" required="required" value='${correo}'>
 
                         <fieldset class="form-group">
      
-                            <label>Numero</label> <input type="text" " class="form-control" name="numero" required="required">
+                            <label>Numero</label> <input type="text" " class="form-control" name="numero" value='${numero}' required="required">
                         </fieldset>
 
                         <fieldset class="form-group">
-                            <label>Tipo</label> <input type="text"  class="form-control" name="tipo">
+                            <label>Tipo</label> <input type="text"  class="form-control" name="tipo" value='${tipo}'>
                         </fieldset>
 
                         <fieldset class="form-group">
-                            <label>Operadora</label> <input type="text" class="form-control" name="operadora">
+                            <label>Operadora</label> <input type="text" class="form-control" name="operadora" value='${operadora}'>
                         </fieldset>
 
                         <button type="submit" class="btn btn-success">Save</button>
