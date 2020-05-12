@@ -36,19 +36,26 @@ public class DeleteTelefonoController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		TelefonoDAO telefonoDAO2 = DAOFactory.getFactory().getTelefonoDao();
-    	System.out.println("ha llegado a eliminar un telefono");
-    	String ids = request.getParameter("id");
-    	int idi = Integer.parseInt(ids);
-    	Telefono te = telefonoDAO2.read(idi);
-    	telefonoDAO2.delete(te);
-    	System.out.print("\n---Elminación de telefono\n");
-    	UsuarioDAO usuarioDAO = DAOFactory.getFactory().getUsuarioDao();
-    	String correo = request.getParameter("correo");
-    	Usuario user = usuarioDAO.findByCorreo(correo);
-    	Set<Telefono> telefonos=telefonoDAO2.findByUsuarioId(user.getCedula());
-    	request.setAttribute("telefonos", telefonos);
-        url = "/JSP/TelefonosList.jsp";
+		try {
+			TelefonoDAO telefonoDAO2 = DAOFactory.getFactory().getTelefonoDao();
+	    	System.out.println("ha llegado a eliminar un telefono");
+	    	String ids = request.getParameter("id");
+	    	int idi = Integer.parseInt(ids);
+	    	Telefono te = telefonoDAO2.read(idi);
+	    	telefonoDAO2.delete(te);
+	    	System.out.print("\n---Elminación de telefono\n");
+	    	UsuarioDAO usuarioDAO = DAOFactory.getFactory().getUsuarioDao();
+	    	String correo = request.getParameter("correo");
+	    	Usuario user = usuarioDAO.findByCorreo(correo);
+	    	Set<Telefono> telefonos=telefonoDAO2.findByUsuarioId(user.getCedula());
+	    	request.setAttribute("telefonos", telefonos);
+	        url = "/JSP/TelefonosList.jsp";
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+			url = "/Html/login.html";
+		}
+		
         request.getRequestDispatcher(url).forward(request, response);
 	}
 

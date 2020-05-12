@@ -17,7 +17,7 @@
                     </div>
 
                     <ul class="navbar-nav">
-                        <li><a href="<%=request.getContextPath()%>/list" class="nav-link">telefonos</a></li>
+                    	 <li><a href="<%=request.getContextPath()%>/Logout?salir=salir" class="nav-link">Cerrar Sesion</a></li>
                     </ul>
                 </nav>
             </header>
@@ -36,7 +36,7 @@
 
                         <fieldset class="form-group">
      
-                            <label>Numero</label> <input type="text" " class="form-control" name="numero" value='${numero}' required="required">
+                            <label>Numero</label> <input type="text"  class="form-control" name="numero" value='${numero}' required="required">
                         </fieldset>
 
                         <fieldset class="form-group">

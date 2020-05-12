@@ -9,13 +9,13 @@ import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+
 import javax.servlet.http.HttpSession;
 
 /**
  * Servlet Filter implementation class Filtro_Sesion
  */
-@WebFilter({"/JSP/TelefonosList.jsp", "/JSP/TelefonoEdit.jsp"})
+@WebFilter({"/JSP/TelefonosList.jsp", "/JSP/TelefonoEdit.jsp","/UpdateTelefonoCOntroller"})
 public class Filtro_Sesion implements Filter {
 
     /**
@@ -38,8 +38,7 @@ public class Filtro_Sesion implements Filter {
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
 		System.out.println("ha empezado el filtro");
 
-		  HttpServletRequest req = (HttpServletRequest)request;
-	      HttpServletResponse res = (HttpServletResponse)response;
+		 
 	      HttpSession session =((HttpServletRequest) request).getSession();
 	
 

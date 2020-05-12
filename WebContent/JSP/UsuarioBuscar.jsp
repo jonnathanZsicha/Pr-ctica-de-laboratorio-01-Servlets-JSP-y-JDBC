@@ -15,7 +15,7 @@
             <ul>
                 <li><a href="/Practica01/Html/index.html" class="active">Home</a></li>
                 <li><a href="/Practica01/JSP/Registrar.jsp">Registrarse</a></li>
-                <li><a href="/Practica01/Htmllogin.html">iniciar Sesion</a></li>
+                <li><a href="/Practica01/Html/login.html">iniciar Sesion</a></li>
                 <li><img src="/Practica01/images/log.png" alt="" title="" style="padding: 0px; margin: 0px;"/></li>
             </ul>
         </div>
@@ -32,8 +32,8 @@
                        
                         <small>conectate siempre con tus amigos</small><input id="correo" type="text" name="busqueda"  alt=""/><br />
                     
-                        <input type="submit" id="contact-submit" value="cedula"/>
-                        <input type="submit" id="contact-clear" value="correo"/>
+                        <input name="cedula" type="submit" id="contact-submit" value="cedula"/>
+                        <input name="correo" type="submit" id="contact-clear" value="correo"/>
                     </fieldset>
                    </form>
                    		<table class="customers">
@@ -55,9 +55,8 @@
 							<td><c:out value="${p1.cedula}" /></td>
 							<td><c:out value="${p1.nombre}" /></td>
 							<td><c:out value="${p1.apellido}" /></td>
-							<td><c:out value="${p1.correo}" /></td>
-							<td><a
-								href="delete?id=<c:out value='${p1.correo}' />">emviar</a>
+							<td><a href="mailto:<c:out value="${p1.correo}" />"><c:out value="${p1.correo}" /></a></td>
+							<td><a href="mailto:<c:out value="${p1.correo}" />"><c:out value="${p1.correo}" /></a>
 		
 						</tr>
 						
@@ -69,7 +68,7 @@
 			<table class="customers">
 				<thead>
 					<tr>
-						<
+						
 						<th>NUMERO</th>
 						<th>TIPO</th>
 						<th>OPERADOR</th>
@@ -86,7 +85,7 @@
 							<td><c:out value="${telefono.numero}" /></td>
 							<td><c:out value="${telefono.tipo}" /></td>
 							<td><c:out value="${telefono.operadora}" /></td>
-							<td><a href="edit?id=<c:out value='${telefono.id}' />">llamar</a>
+							<td><a href="tel:+593<c:out value="${telefono.numero}" />">Llamar</a>
 								&nbsp;&nbsp;&nbsp;&nbsp; </td>
 						</tr>
 					</c:forEach>

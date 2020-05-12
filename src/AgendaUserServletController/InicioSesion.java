@@ -25,6 +25,7 @@ import AgendaUserModel.Usuario;
 @WebServlet("/InicioSesion")
 public class InicioSesion extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	private String url = null;
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -89,6 +90,7 @@ public class InicioSesion extends HttpServlet {
 			
 		}catch (Exception e) {
 			// TODO: handle exception
+			url= "/Html/login.html";
 		}
 		System.out.println(url);
 		request.getRequestDispatcher(url).forward(request, response);
